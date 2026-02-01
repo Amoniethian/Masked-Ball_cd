@@ -87,3 +87,8 @@ Coverage/
 # =========================
 packages/
 *.nupkg
+
+# =========================
+# Local documentation (not pushed)
+# =========================
+UI_Interaction_Fishbone.txt
