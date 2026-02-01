@@ -14,6 +14,7 @@ public class RoleSelectUI : MonoBehaviour
     [Header("Scale")]
     public float focusedScale = 3f; // 放大倍率，可调
 
+    private SoulProfile soulProfile;
     void Awake()
     {
         HideFocus();
@@ -22,16 +23,16 @@ public class RoleSelectUI : MonoBehaviour
             closeButton.onClick.AddListener(HideFocus);
     }
 
-    public void ShowRole()
+    public void ShowRole(SoulProfile sp, Sprite cs)
     {
-
+        soulProfile = sp;
         if (focusLayer != null) focusLayer.SetActive(true);
         if (dim != null) dim.gameObject.SetActive(true);
 
         if (focusSprite != null)
         {
             focusSprite.gameObject.SetActive(true);
-            focusSprite.sprite = null; // placebo
+            focusSprite.sprite = cs;
 
             // 居中 + 放大（FocusIcon 要是 Middle Center Anchor）
             var rt = focusSprite.rectTransform;

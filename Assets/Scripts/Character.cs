@@ -12,14 +12,17 @@ public class Character : MonoBehaviour
 
     public RoleSelectUI CharacterFocus;
 
+    private Sprite characterSprite;
+
     public void Awake()
     {
+        characterSprite = GetComponent<SpriteRenderer>().sprite;
     }
     public void OnClick()
     {
         Debug.Log($"Clicked character: {profile.displayName}");
 
-        CharacterFocus.ShowRole();
+        CharacterFocus.ShowRole(profile, characterSprite);
         // TODO:
         // 1. 打开角色面板
         // 2. 显示道具 / 穿着
@@ -29,6 +32,18 @@ public class Character : MonoBehaviour
     public void SetCellIndex(Vector2Int idx)
     {
         CellIndex = idx;
-        Debug.Log(idx);
+
+        if (idx.y == 0)
+        {
+            GetComponent<SpriteRenderer>().sortingOrder = 0;
+        }
+        else if(idx.y == 1)
+        {
+            GetComponent<SpriteRenderer>().sortingOrder = 6;
+        }
+        else if (idx.y == 1)
+        {
+            GetComponent<SpriteRenderer>().sortingOrder = 6;
+        }
     }
 }
