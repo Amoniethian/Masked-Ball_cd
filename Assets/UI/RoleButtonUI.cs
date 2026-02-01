@@ -8,6 +8,7 @@ public class RoleButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public RoleSelectUI controller; // 拖 RoleSelectPanel 上的 RoleSelectUI
     public Image iconImage;         // 子物体 Icon 的 Image（用于显示）
     public Sprite roleSprite;       // 角色Sprite（可直接拖）
+    public SoulProfile soulProfile; // 关联的角色数据
 
     [Header("Hover Glow Components (Optional)")]
     public Outline outline;         // Icon 上的 Outline
@@ -29,11 +30,19 @@ public class RoleButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (controller == null) return;
+        if (controller == null)
+        {
+            Debug.LogWarning($"RoleButtonUI {gameObject.name}: controller 未指定");
+            return;
+        }
 
-        Sprite s = roleSprite;
-        if (s == null && iconImage != null) s = iconImage.sprite;
+        // 获取要显示的Sprite
+        Sprite displaySprite = roleSprite;
+        if (displaySprite == null && iconImage != null)
+            displaySprite = iconImage.sprite;
 
+        // 调用控制器显示角色
+        controller.ShowRole(soulProfile, displaySprite);
     }
 
     void SetGlow(bool on)

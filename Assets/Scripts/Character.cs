@@ -5,30 +5,42 @@ using MaskedBall.CharacterCore;
 
 public class Character : MonoBehaviour
 {
-
     public Vector2Int CellIndex { get; private set; }
 
     public SoulProfile profile;
 
     public RoleSelectUI CharacterFocus;
 
-    public void Awake()
+    private SpriteRenderer spriteRenderer;
+
+    void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
+
     public void OnClick()
     {
-        Debug.Log($"Clicked character: {profile.displayName}");
+        // 空引用保护
+        if (CharacterFocus == null)
+        {
+            Debug.LogWarning($"Character {gameObject.name}: CharacterFocus 未指定，无法显示焦点面板");
+            return;
+        }
 
-        CharacterFocus.ShowRole();
+        string displayName = profile != null ? profile.displayName : gameObject.name;
+        Debug.Log($"Clicked character: {displayName}");
+
+        // 获取角色图像并传递给焦点面板
+        Sprite characterSprite = spriteRenderer != null ? spriteRenderer.sprite : null;
+        CharacterFocus.ShowRole(profile, characterSprite);
+
         // TODO:
-        // 1. 打开角色面板
-        // 2. 显示道具 / 穿着
-        // 3. 高亮 / 选中
+        // 1. 显示道具 / 穿着
+        // 2. 高亮 / 选中
     }
 
     public void SetCellIndex(Vector2Int idx)
     {
         CellIndex = idx;
-        Debug.Log(idx);
     }
 }

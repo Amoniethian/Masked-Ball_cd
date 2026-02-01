@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public GridManager grid;
     public Transform characterParent; // 指向层级里的 Character 父物体
+    public RoleSelectUI focusPanel;   // 焦点面板引用，用于检查UI状态
 
     private Camera cam;
     private Character dragging;
@@ -14,6 +15,11 @@ public class GameManager : MonoBehaviour
     private Vector3 mouseDownWorldPos;
     private bool isDragging;
     private float clickThreshold = 0.15f; // 世界坐标下的点击容差
+
+    /// <summary>
+    /// 检查是否有UI面板正在阻挡输入
+    /// </summary>
+    private bool IsUIBlocking => focusPanel != null && focusPanel.IsShowing;
 
     void Awake()
     {
@@ -40,6 +46,19 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        // 当UI面板打开时，阻止角色拖拽输入
+        if (IsUIBlocking)
+        {
+            // 如果正在拖拽中打开了UI，取消拖拽并归位
+            if (dragging != null)
+            {
+                grid.SnapToCell(dragging);
+                dragging = null;
+                isDragging = false;
+            }
+            return;
+        }
+
         if (Input.GetMouseButtonDown(0))
             TryPick();
 
