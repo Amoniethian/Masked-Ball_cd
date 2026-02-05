@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">新闻网站</title>
+    <title id="page-title">European Daily News</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -88,6 +88,9 @@
         <p class="disclaimer" id="footer-disclaimer"></p>
     </footer>
 
+    <!-- Bilingual toggle button (dev tool) -->
+    <button id="cn-toggle" onclick="document.body.classList.toggle('show-cn'); this.textContent = document.body.classList.contains('show-cn') ? '中/EN ✓' : '中/EN'" style="position:fixed;bottom:20px;right:20px;z-index:9999;background:#333;color:#fff;border:none;padding:8px 14px;border-radius:20px;font-size:12px;cursor:pointer;opacity:0.7;transition:opacity 0.2s;font-family:sans-serif;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">中/EN</button>
+
     <script src="config.js"></script>
     <script>
         // 页面初始化
@@ -151,6 +154,11 @@
                 `;
                 sidebarNews.appendChild(item);
             });
+
+            // Dev mode: show Chinese with ?cn=1
+            if (new URLSearchParams(window.location.search).has('cn')) {
+                document.body.classList.add('show-cn');
+            }
 
             // 设置页脚
             document.getElementById('footer-copyright').textContent = config.footer.copyright;

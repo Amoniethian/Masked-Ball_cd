@@ -79,6 +79,9 @@
         </div>
     </div>
 
+    <!-- Bilingual toggle button (dev tool) -->
+    <button id="cn-toggle" onclick="document.body.classList.toggle('show-cn'); this.textContent = document.body.classList.contains('show-cn') ? '中/EN ✓' : '中/EN'" style="position:fixed;bottom:20px;right:20px;z-index:9999;background:#333;color:#fff;border:none;padding:8px 14px;border-radius:20px;font-size:12px;cursor:pointer;opacity:0.7;transition:opacity 0.2s;font-family:sans-serif;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">中/EN</button>
+
     <script src="config.js"></script>
     <script>
         // ========== Global State ==========
@@ -140,6 +143,11 @@
             document.getElementById('chat-status').textContent = config.chat.bloggerStatus;
             if (config.chat.bloggerOnline) {
                 document.getElementById('chat-status').classList.add('online');
+            }
+
+            // Dev mode: show Chinese with ?cn=1
+            if (new URLSearchParams(window.location.search).has('cn')) {
+                document.body.classList.add('show-cn');
             }
 
             renderPosts();
