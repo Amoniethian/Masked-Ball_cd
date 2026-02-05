@@ -649,27 +649,37 @@ const WIKI_CONFIG = {
 
                 <h3>The Invitation</h3>
                 <p>Lucio's digital consciousness, unaware of its own death, continued to operate his blog and social media accounts. When you — as his online friend "Alex" — accepted his invitation to visit the practice room at Domgasse 5, you entered a space that no longer exists in the physical world.</p>
+                <p class="cn">Lucio的数字意识不知道自己已经死亡，继续运营着他的博客和社交媒体账号。当你——作为他的网友"Alex"——接受了他的邀请，前往大教堂巷5号参观练琴室时，你进入了一个在物理世界中已不复存在的空间。</p>
                 <p>The room you found yourself in is a <strong>digital reconstruction</strong>. The flickering lights, the sense of spatial instability, the feeling that the walls aren't quite solid — these are symptoms of the <strong>degrading digital environment</strong>, running on servers that no one is maintaining.</p>
+                <p class="cn">你所身处的房间是一个<strong>数字重建</strong>。闪烁的灯光、空间的不稳定感、墙壁似乎并不坚实的感觉——这些都是<strong>退化中的数字环境</strong>的症状，运行在无人维护的服务器上。</p>
 
                 <h3>The Two Ghosts</h3>
                 <p>Within this space, two consciousnesses persist:</p>
+                <p class="cn">在这个空间中，两个意识并存：</p>
                 <ul>
                     <li><strong>Lucio</strong> — believes he is alive, continues to "compose" and blog, doesn't understand why things feel wrong</li>
                     <li><strong>Emil</strong> — exists in permanent darkness, occasionally bleeding through into Lucio's consciousness, the true genius whose music the world attributes to another</li>
                 </ul>
+                <p class="cn">- <strong>Lucio</strong>——相信自己还活着，继续"作曲"和写博客，不明白为什么一切感觉不对劲<br>- <strong>Emil</strong>——存在于永恒的黑暗中，偶尔渗透进Lucio的意识，他才是真正的天才，但全世界将他的音乐归于另一个人名下</p>
 
                 <h3>The Choice</h3>
                 <p>Now that you know the truth, you must decide:</p>
+                <p class="cn">既然你已经知道了真相，你必须做出选择：</p>
 
                 <div class="document-box">
                     <p><strong>OPTION A: Silence</strong></p>
+                    <p class="cn"><strong>选项A：沉默</strong></p>
                     <p>Say nothing. Leave this place. Let Lucio's digital ghost continue to believe he is alive, continue to believe he is a genius. Protect your friend's dignity — even if that dignity is built on a lie. Emil's name will remain unspoken. The music will forever be credited to the wrong person.</p>
+                    <p class="cn">什么都不说。离开这里。让Lucio的数字幽灵继续相信他还活着，继续相信自己是天才。保护你朋友的尊严——即使那尊严建立在谎言之上。Emil的名字将永远无人提起。音乐将永远署错人的名。</p>
                     <br>
                     <p><strong>OPTION B: Truth</strong></p>
+                    <p class="cn"><strong>选项B：真相</strong></p>
                     <p>Expose everything. Reveal that Lucio's talent was stolen. That Emil — a blind child with no name, no family, no freedom — was the true artist behind every note. That Heinrich Hoffmann killed them both in pursuit of a delusion. The world will know Lucio as a fraud, but Emil will finally be acknowledged as the genius he always was.</p>
+                    <p class="cn">揭露一切。揭示Lucio的才华是偷来的。Emil——一个没有名字、没有家庭、没有自由的失明孩子——才是每一个音符背后的真正艺术家。Heinrich Hoffmann为追逐妄想而杀死了他们两个。世人将知道Lucio是个冒牌货，但Emil终将被承认为他一直以来的那个天才。</p>
                 </div>
 
                 <p style="text-align: center; margin-top: 30px; color: var(--accent-color);"><em>What will you choose?</em></p>
+                <p class="cn" style="text-align: center; margin-top: 10px; color: var(--accent-color);"><em>你会如何选择？</em></p>
             `
         }
     ],
