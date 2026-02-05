@@ -1,4 +1,4 @@
-/* 新闻网站样式 - 仿真欧洲报纸风格 */
+/* News Website — BBC-inspired clean style */
 
 * {
     margin: 0;
@@ -8,64 +8,69 @@
 
 body {
     font-family: 'Georgia', 'Times New Roman', serif;
-    background-color: #f5f5f0;
-    color: #1a1a1a;
-    line-height: 1.6;
+    background-color: #fff;
+    color: #222;
+    line-height: 1.7;
 }
 
-/* 顶部导航条 */
+/* Top bar */
 .top-bar {
-    background-color: #1a1a1a;
+    background-color: #222;
     color: #fff;
-    padding: 8px 20px;
+    padding: 6px 20px;
     font-size: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Arial', 'Helvetica', sans-serif;
 }
 
 .top-bar .date {
-    font-family: Arial, sans-serif;
+    color: #bbb;
 }
 
 .top-bar .links a {
-    color: #ccc;
+    color: #ddd;
     text-decoration: none;
-    margin-left: 15px;
-    font-family: Arial, sans-serif;
+    margin-left: 18px;
+    font-size: 12px;
+    transition: color 0.2s;
 }
 
 .top-bar .links a:hover {
     color: #fff;
+    text-decoration: underline;
 }
 
-/* 网站头部 */
+/* Header */
 header {
-    background-color: #fff;
-    border-bottom: 3px double #1a1a1a;
-    padding: 20px 0;
+    background-color: #bb1919;
+    padding: 18px 0;
     text-align: center;
 }
 
 .logo {
-    font-size: 42px;
+    font-size: 28px;
     font-weight: bold;
-    letter-spacing: 2px;
-    color: #1a1a1a;
+    letter-spacing: 3px;
+    color: #fff;
     text-transform: uppercase;
-    font-family: 'Times New Roman', serif;
+    font-family: 'Arial Black', 'Helvetica', sans-serif;
 }
 
 .slogan {
-    font-size: 14px;
-    color: #666;
-    font-style: italic;
-    margin-top: 5px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    font-style: normal;
+    margin-top: 3px;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 1px;
 }
 
-/* 导航菜单 */
+/* Navigation */
 nav {
-    background-color: #8b0000;
+    background-color: #bb1919;
+    border-top: 1px solid rgba(255,255,255,0.2);
     padding: 0;
 }
 
@@ -73,7 +78,7 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -81,22 +86,20 @@ nav ul li a {
     display: block;
     color: #fff;
     text-decoration: none;
-    padding: 12px 25px;
-    font-family: Arial, sans-serif;
+    padding: 10px 22px;
+    font-family: 'Arial', sans-serif;
     font-size: 14px;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s;
 }
 
 nav ul li a:hover {
-    background-color: #a00000;
+    background-color: rgba(0,0,0,0.15);
 }
 
-/* 主要内容区 */
+/* Main content */
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 30px 20px;
     display: grid;
@@ -104,51 +107,55 @@ nav ul li a:hover {
     gap: 40px;
 }
 
-/* 文章主体 */
+/* Article */
 .main-article {
     background-color: #fff;
-    padding: 30px;
-    border: 1px solid #ddd;
+    padding: 0;
 }
 
 .article-category {
     display: inline-block;
-    background-color: #1a1a1a;
+    background-color: #bb1919;
     color: #fff;
-    padding: 4px 12px;
+    padding: 3px 10px;
     font-size: 11px;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 15px;
+    font-weight: bold;
 }
 
 .article-category.obituary {
-    background-color: #4a4a4a;
+    background-color: #555;
 }
 
 .article-title {
-    font-size: 32px;
-    line-height: 1.2;
-    margin-bottom: 10px;
+    font-size: 34px;
+    line-height: 1.15;
+    margin-bottom: 12px;
     font-weight: bold;
     color: #1a1a1a;
+    font-family: 'Georgia', serif;
 }
 
 .article-subtitle {
-    font-size: 20px;
+    font-size: 18px;
     color: #555;
-    font-style: italic;
+    font-weight: normal;
     margin-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 18px;
+    line-height: 1.5;
 }
 
 .article-meta {
     font-size: 13px;
     color: #888;
     margin-bottom: 25px;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .article-meta .author {
@@ -164,15 +171,16 @@ nav ul li a:hover {
 .article-image img {
     max-width: 100%;
     height: auto;
-    border: 1px solid #ddd;
 }
 
 .article-image .caption {
     font-size: 12px;
     color: #666;
-    font-style: italic;
     margin-top: 8px;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    text-align: left;
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .article-content {
@@ -181,78 +189,87 @@ nav ul li a:hover {
 }
 
 .article-content p {
-    margin-bottom: 20px;
-    text-align: justify;
+    margin-bottom: 18px;
 }
 
 .article-content p.lead {
-    font-size: 19px;
-    font-weight: 500;
-    color: #333;
+    font-size: 20px;
+    font-weight: 400;
+    color: #222;
+    line-height: 1.6;
 }
 
 .article-content h3 {
     font-size: 22px;
-    margin: 30px 0 15px 0;
+    margin: 35px 0 15px 0;
     color: #1a1a1a;
+    font-family: 'Georgia', serif;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 8px;
 }
 
 .article-content .editor-note {
     font-size: 14px;
     color: #666;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #e0e0e0;
     padding-top: 15px;
     margin-top: 30px;
 }
 
-/* 信息框 */
+/* Info box */
 .info-box {
-    background-color: #f8f8f5;
-    border: 1px solid #ddd;
-    border-left: 4px solid #8b0000;
+    background-color: #f6f6f6;
+    border: 1px solid #e0e0e0;
+    border-top: 3px solid #bb1919;
     padding: 20px;
     margin: 25px 0;
 }
 
 .info-box h4 {
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     color: #1a1a1a;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
 }
 
 .info-box table {
     width: 100%;
     font-size: 14px;
+    font-family: 'Arial', sans-serif;
 }
 
 .info-box table tr td {
-    padding: 6px 0;
+    padding: 5px 0;
     vertical-align: top;
+    border-bottom: 1px solid #eee;
+}
+
+.info-box table tr:last-child td {
+    border-bottom: none;
 }
 
 .info-box table tr td:first-child {
     font-weight: bold;
-    width: 80px;
+    width: 90px;
     color: #555;
 }
 
-/* 侧边栏 */
+/* Sidebar */
 .sidebar {
     background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
+    padding: 0;
 }
 
 .sidebar h3 {
-    font-size: 16px;
+    font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-bottom: 2px solid #8b0000;
+    border-bottom: 3px solid #bb1919;
     padding-bottom: 10px;
-    margin-bottom: 20px;
-    font-family: Arial, sans-serif;
+    margin-bottom: 0;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
 }
 
 .sidebar-item {
@@ -266,66 +283,68 @@ nav ul li a:hover {
 
 .sidebar-item .category {
     font-size: 11px;
-    color: #8b0000;
+    color: #bb1919;
     text-transform: uppercase;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     font-weight: bold;
 }
 
 .sidebar-item h4 {
     font-size: 15px;
-    margin: 8px 0 5px 0;
+    margin: 5px 0 4px 0;
     line-height: 1.4;
+    font-family: 'Georgia', serif;
 }
 
 .sidebar-item h4 a {
-    color: #1a1a1a;
+    color: #222;
     text-decoration: none;
 }
 
 .sidebar-item h4 a:hover {
-    color: #8b0000;
+    text-decoration: underline;
 }
 
 .sidebar-item .time {
     font-size: 12px;
     color: #999;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
-/* 广告位 */
+/* Ad placeholder */
 .ad-placeholder {
-    background-color: #f0f0e8;
-    border: 1px dashed #ccc;
+    background-color: #f6f6f6;
+    border: 1px solid #e0e0e0;
     padding: 40px 20px;
     text-align: center;
-    color: #999;
+    color: #bbb;
     font-size: 12px;
     margin-top: 20px;
+    font-family: 'Arial', sans-serif;
 }
 
-/* 页脚 */
+/* Footer */
 footer {
-    background-color: #1a1a1a;
+    background-color: #222;
     color: #ccc;
     text-align: center;
-    padding: 30px 20px;
+    padding: 25px 20px;
     margin-top: 40px;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     font-size: 13px;
 }
 
 footer p {
-    margin: 5px 0;
+    margin: 4px 0;
 }
 
 footer .disclaimer {
     font-size: 11px;
     color: #666;
-    margin-top: 15px;
+    margin-top: 12px;
 }
 
-/* 响应式设计 */
+/* Responsive */
 @media (max-width: 900px) {
     .container {
         grid-template-columns: 1fr;
@@ -340,12 +359,27 @@ footer .disclaimer {
     }
 
     nav ul li a {
-        padding: 10px 15px;
+        padding: 8px 14px;
         font-size: 12px;
     }
 }
 
-/* 占位图片样式 */
+/* Chinese bilingual — hidden by default, ?cn=1 to show */
+.cn {
+    display: none;
+    color: #999;
+    font-size: 0.85em;
+    line-height: 1.6;
+    margin-top: -5px;
+    margin-bottom: 12px;
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+}
+
+body.show-cn .cn {
+    display: block;
+}
+
+/* Placeholder image */
 .placeholder-image {
     background: linear-gradient(135deg, #667 0%, #999 100%);
     width: 100%;
@@ -355,5 +389,5 @@ footer .disclaimer {
     justify-content: center;
     color: #fff;
     font-size: 14px;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }

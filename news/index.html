@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">新闻网站</title>
+    <title id="page-title">European Daily News</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,9 +11,9 @@
     <div class="top-bar">
         <div class="date" id="current-date"></div>
         <div class="links">
-            <a href="#">订阅</a>
-            <a href="#">登录</a>
-            <a href="#">English</a>
+            <a href="#">Subscribe</a>
+            <a href="#">Sign In</a>
+            <a href="#">Deutsch</a>
         </div>
     </div>
 
@@ -26,13 +26,13 @@
     <!-- 导航菜单 -->
     <nav>
         <ul>
-            <li><a href="#">首页</a></li>
-            <li><a href="#">国际</a></li>
-            <li><a href="#">财经</a></li>
-            <li><a href="#">文化</a></li>
-            <li><a href="#">体育</a></li>
-            <li><a href="#">科技</a></li>
-            <li><a href="#">生活</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">World</a></li>
+            <li><a href="#">Finance</a></li>
+            <li><a href="#">Culture</a></li>
+            <li><a href="#">Sport</a></li>
+            <li><a href="#">Tech</a></li>
+            <li><a href="#">Life</a></li>
         </ul>
     </nav>
 
@@ -70,13 +70,13 @@
 
         <!-- 侧边栏 -->
         <aside class="sidebar">
-            <h3>最新新闻</h3>
+            <h3>Latest News</h3>
             <div id="sidebar-news">
                 <!-- 由JS动态生成 -->
             </div>
 
             <div class="ad-placeholder">
-                广告位
+                Advertisement
             </div>
         </aside>
     </div>
@@ -87,6 +87,9 @@
         <p id="footer-address"></p>
         <p class="disclaimer" id="footer-disclaimer"></p>
     </footer>
+
+    <!-- Bilingual toggle button (dev tool) -->
+    <button id="cn-toggle" onclick="document.body.classList.toggle('show-cn'); this.textContent = document.body.classList.contains('show-cn') ? '中/EN ✓' : '中/EN'" style="position:fixed;bottom:20px;right:20px;z-index:9999;background:#333;color:#fff;border:none;padding:8px 14px;border-radius:20px;font-size:12px;cursor:pointer;opacity:0.7;transition:opacity 0.2s;font-family:sans-serif;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">中/EN</button>
 
     <script src="config.js"></script>
     <script>
@@ -117,12 +120,12 @@
             const imageContainer = document.getElementById('article-image-container');
             if (headline.image) {
                 imageContainer.innerHTML = `
-                    <img src="${headline.image}" alt="文章配图" onerror="this.parentElement.innerHTML='<div class=\\'placeholder-image\\'>[ 图片位置 - 请添加图片到 ${headline.image} ]</div><p class=\\'caption\\'>${headline.imageCaption}</p>'">
+                    <img src="${headline.image}" alt="Article image" onerror="this.parentElement.innerHTML='<div class=\\'placeholder-image\\'>[ Image placeholder ]</div><p class=\\'caption\\'>${headline.imageCaption}</p>'">
                     <p class="caption">${headline.imageCaption}</p>
                 `;
             } else {
                 imageContainer.innerHTML = `
-                    <div class="placeholder-image">[ 图片位置 ]</div>
+                    <div class="placeholder-image">[ Image placeholder ]</div>
                     <p class="caption">${headline.imageCaption}</p>
                 `;
             }
@@ -151,6 +154,11 @@
                 `;
                 sidebarNews.appendChild(item);
             });
+
+            // Dev mode: show Chinese with ?cn=1
+            if (new URLSearchParams(window.location.search).has('cn')) {
+                document.body.classList.add('show-cn');
+            }
 
             // 设置页脚
             document.getElementById('footer-copyright').textContent = config.footer.copyright;
