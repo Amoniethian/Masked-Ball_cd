@@ -176,7 +176,7 @@
                                 <div class="comment-text">${comment.content}</div>
                                 <div class="comment-meta">
                                     <span>${comment.time}</span>
-                                    <button class="like-btn">❤ ${comment.likes}</button>
+                                    <button class="like-btn" onclick="toggleCommentLike(this, ${comment.likes})">🤍 ${comment.likes}</button>
                                 </div>
                             </div>
                         </div>
@@ -251,6 +251,12 @@
                 const statsEl = btn.closest('.post-card').querySelector('.post-stats span:nth-child(2)');
                 statsEl.textContent = '❤ ' + formatNumber(post.likes) + ' likes';
             }
+        }
+
+        function toggleCommentLike(btn, originalLikes) {
+            const isLiked = btn.classList.toggle('liked');
+            const count = isLiked ? originalLikes + 1 : originalLikes;
+            btn.innerHTML = (isLiked ? '❤' : '🤍') + ' ' + count;
         }
 
         function toggleComments(postId) {
